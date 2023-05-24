@@ -5,6 +5,7 @@ import 'package:spotify_statistic/features/splashScreen/cubit/splash_screen_cubi
 import 'package:spotify_statistic/features/splashScreen/view/splash_screen_form.dart';
 
 import '../../../core/widgets/koin_page.dart';
+import '../../homeView/view/home_route.dart';
 
 class SplashScreenRoute extends KoinPage<SplashScreenCubit> {
   const SplashScreenRoute({super.key});
@@ -17,7 +18,7 @@ class SplashScreenRoute extends KoinPage<SplashScreenCubit> {
   void onLoginResult(BuildContext context, SplashScreenState state) {
     switch (state) {
       case SplashScreenState.loggedIn:
-        // Navigator.of(context).pushReplacementNamed(HomeRoute.ROUTE_NAME);
+        Navigator.of(context).pushReplacementNamed(HomeRoute.ROUTE_NAME);
         break;
       case SplashScreenState.notLogged:
         Navigator.of(context).pushReplacementNamed(LoginScreenRoute.ROUTE_NAME);

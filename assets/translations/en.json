@@ -1,4 +1,14 @@
 {
   "sthWentWrong": "Something went wrong",
-  "login": "Login with Spotify"
+  "login": "Login with Spotify",
+  "artists": "Artists",
+  "tracks": "Tracks",
+  "profile": "Profile",
+  "last4Weeks": "Last 4 weeks",
+  "last6Months": "Last 6 months",
+  "allTime": "All time",
+  "yourTopArtists": "Your top artists",
+  "tokenExpired": "Your session has expired. Please login again.",
+  "yourTopTracks": "Your top tracks",
+  "logout": "Logout"
 }

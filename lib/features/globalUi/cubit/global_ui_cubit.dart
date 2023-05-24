@@ -5,9 +5,9 @@ import 'package:spotify_statistic/core/infrastructure/error_handler.dart';
 part 'global_ui_state.dart';
 
 class GlobalUiCubit extends Cubit<GlobalUiState> {
-  GlobalUiCubit() : super(GlobalUiInitial());
+  GlobalUiCubit(this._errorHandler) : super(GlobalUiInitial());
 
-  final ErrorHandler _errorHandler = ErrorHandler();
+  final ErrorHandler _errorHandler;
 
   void showSnackBarError(dynamic message) {
     emit(GlobalUiSnackBarError(_errorHandler.getHandleError(message)));
@@ -18,5 +18,9 @@ class GlobalUiCubit extends Cubit<GlobalUiState> {
 
   void hideLoading() {
     emit(GlobalUiInitial());
+  }
+
+  void forceLogout() {
+    emit(GlobalUiAccessTokenError());
   }
 }

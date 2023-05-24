@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_statistic/generated/locale_keys.g.dart';
+import 'package:spotify_statistic/styles/colors.dart';
 
+import '../../../styles/dimens.dart';
 import '../cubit/login_screen_cubit.dart';
 
 class LoginScreenForm extends StatelessWidget {
@@ -28,21 +30,25 @@ class LoginScreenForm extends StatelessWidget {
                   scale: 5,
                 ),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.green,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32.0),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: SpotifyColors.white,
+                    backgroundColor: SpotifyColors.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(Dimens.circular),
+                    ),
                   ),
-                ),
-                onPressed: () =>
-                    BlocProvider.of<LoginScreenCubit>(context).login(),
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  child: Text(
-                    LocaleKeys.login.tr(),
-                    style: const TextStyle(fontSize: 25),
+                  onPressed: () =>
+                      BlocProvider.of<LoginScreenCubit>(context).login(),
+                  child: Container(
+                    padding: const EdgeInsets.all(Dimens.spanMedium),
+                    child: Text(
+                      LocaleKeys.login.tr(),
+                      style: Theme.of(context).textTheme.displayMedium,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
               ),

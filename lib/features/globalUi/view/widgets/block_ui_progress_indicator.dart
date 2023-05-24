@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_statistic/styles/colors.dart';
 
 class BlockUiProgressIndicator extends StatelessWidget {
   const BlockUiProgressIndicator({super.key});
@@ -7,8 +8,7 @@ class BlockUiProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      color: Colors.black.withAlpha(100),
-      child: const CircularProgressIndicator(color: Colors.green),
+      child: CircularProgressIndicator(color: SpotifyColors.primaryColor),
     );
   }
 }

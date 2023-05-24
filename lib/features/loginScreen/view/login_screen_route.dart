@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify_statistic/features/homeView/view/home_route.dart';
 import 'package:spotify_statistic/features/loginScreen/cubit/login_screen_cubit.dart';
 
 import '../../../core/widgets/koin_page.dart';
@@ -13,7 +14,7 @@ class LoginScreenRoute extends KoinPage<LoginScreenCubit> {
   void onLoginResult(BuildContext context, LoginScreenState state) {
     switch (state.runtimeType) {
       case LoginScreenSuccess:
-        // Navigator.of(context).pushReplacementNamed(HomeRoute.ROUTE_NAME);
+        Navigator.of(context).pushReplacementNamed(HomeRoute.ROUTE_NAME);
         break;
       default:
         return;

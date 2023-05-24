@@ -8,6 +8,8 @@ import 'package:koin/koin.dart';
 import 'package:koin_flutter/koin_flutter.dart';
 import 'package:spotify_statistic/features/globalUi/cubit/global_ui_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:spotify_statistic/features/loginScreen/view/login_screen_route.dart';
+import 'package:spotify_statistic/styles/theme.dart';
 
 import 'core/helpers/routes.dart';
 import 'core/infrastructure/app_module.dart';
@@ -59,9 +61,7 @@ class MyApp extends StatelessWidget {
       create: (context) => get<GlobalUiCubit>(),
       child: MaterialApp(
         title: 'Spotify Statistic',
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.black,
-        ),
+        theme: createTheme(context),
         routes: routes,
         initialRoute: SplashScreenRoute.ROUTE_NAME,
         locale: context.locale,
@@ -72,7 +72,10 @@ class MyApp extends StatelessWidget {
             body: BlocConsumer<GlobalUiCubit, GlobalUiState>(
               listener: (context, state) {
                 if (state is GlobalUiSnackBarError) {
-                  _snackBarUtils.showErrorSnackBar(context, "error");
+                  _snackBarUtils.showErrorSnackBar(context, state.message);
+                } else if (state is GlobalUiAccessTokenError) {
+                  Navigator.of(context)
+                      .pushReplacementNamed(LoginScreenRoute.ROUTE_NAME);
                 }
               },
               builder: (context, state) {

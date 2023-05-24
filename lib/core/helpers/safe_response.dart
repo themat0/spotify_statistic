@@ -1,6 +1,19 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:logger/logger.dart';
+
 enum ResponseStatus { SUCCESS, ERROR }
+
+final logger = Logger(
+  printer: PrettyPrinter(
+    methodCount: 6,
+    errorMethodCount: 8,
+    lineLength: 120,
+    colors: true,
+    printEmojis: true,
+    printTime: true,
+  ),
+);
 
 class SafeResponse<T> {
   late final T? data;
