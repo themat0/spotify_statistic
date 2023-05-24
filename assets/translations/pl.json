@@ -1,4 +1,14 @@
 {
   "sthWentWrong": "Coś poszło nie tak",
-  "login": "Zaloguj się za pomocą spotify"
+  "login": "Zaloguj się za pomocą spotify",
+  "artists": "Artyści",
+  "tracks": "Utwory",
+  "profile": "Profil",
+  "last4Weeks": "Ostatnie 4 tygodnie",
+  "last6Months": "Ostatnie 6 miesięcy",
+  "allTime": "Cały czas",
+  "yourTopArtists": "Twoi ulubieni artyści",
+  "tokenExpired": "Twoja sesja wygasła. Zaloguj się ponownie",
+  "yourTopTracks": "Twoje ulubione utwory",
+  "logout": "Wyloguj się"
 }

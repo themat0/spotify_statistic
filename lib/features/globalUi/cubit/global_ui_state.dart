@@ -12,3 +12,5 @@ class GlobalUiSnackBarError extends GlobalUiState {
 
   final String message;
 }
+
+class GlobalUiAccessTokenError extends GlobalUiState {}
