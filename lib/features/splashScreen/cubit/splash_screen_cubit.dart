@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-
-import '../../../data/token_repository.dart';
+import 'package:spotify_statistic/data/token_repository.dart';
 
 part 'splash_screen_state.dart';
 

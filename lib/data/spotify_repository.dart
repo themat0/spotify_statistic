@@ -10,17 +10,13 @@ class SpotifyRepository {
 
   final SpotifyApiService _apiService;
 
-  Future<SafeResponse<String>> getAccessToken() =>
-      fetchSafety(() async => await _apiService.getAccessToken());
+  Future<SafeResponse<String>> getAccessToken() => fetchSafety(() async => await _apiService.getAccessToken());
 
-  Future<SafeResponse<List<ArtistObject>>> getTopArtists(
-          TimeInterval timeInterval) =>
+  Future<SafeResponse<List<ArtistObject>>> getTopArtists(TimeInterval timeInterval) =>
       fetchSafety(() async => await _apiService.getTopArtists(timeInterval));
 
-  Future<SafeResponse<List<TrackObject>>> getTopTracks(
-          TimeInterval timeInterval) =>
+  Future<SafeResponse<List<TrackObject>>> getTopTracks(TimeInterval timeInterval) =>
       fetchSafety(() async => await _apiService.getTopTracks(timeInterval));
 
-  Future<SafeResponse<UserObject>> getUserInfo() =>
-      fetchSafety(() async => await _apiService.getUserInfo());
+  Future<SafeResponse<UserObject>> getUserInfo() => fetchSafety(() async => await _apiService.getUserInfo());
 }

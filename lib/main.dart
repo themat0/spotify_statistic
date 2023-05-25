@@ -1,21 +1,18 @@
-// ignore_for_file: depend_on_referenced_packages
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 import 'package:koin/koin.dart';
 import 'package:koin_flutter/koin_flutter.dart';
+import 'package:spotify_statistic/core/helpers/routes.dart';
+import 'package:spotify_statistic/core/infrastructure/app_module.dart';
+import 'package:spotify_statistic/core/widgets/snackbar.dart';
 import 'package:spotify_statistic/features/globalUi/cubit/global_ui_cubit.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:spotify_statistic/features/globalUi/view/widgets/block_ui_progress_indicator.dart';
 import 'package:spotify_statistic/features/loginScreen/view/login_screen_route.dart';
+import 'package:spotify_statistic/features/splashScreen/view/splash_screen_route.dart';
 import 'package:spotify_statistic/styles/theme.dart';
-
-import 'core/helpers/routes.dart';
-import 'core/infrastructure/app_module.dart';
-import 'core/widgets/snackbar.dart';
-import 'features/globalUi/view/widgets/block_ui_progress_indicator.dart';
-import 'features/splashScreen/view/splash_screen_route.dart';
 
 Future<void> main() async {
   MyApp.run();

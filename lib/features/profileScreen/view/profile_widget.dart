@@ -6,8 +6,7 @@ import 'package:spotify_statistic/features/loginScreen/view/login_screen_route.d
 import 'package:spotify_statistic/features/profileScreen/cubit/profile_cubit.dart';
 import 'package:spotify_statistic/generated/locale_keys.g.dart';
 import 'package:spotify_statistic/styles/colors.dart';
-
-import '../../../styles/dimens.dart';
+import 'package:spotify_statistic/styles/dimensions.dart';
 
 class ProfileWidget extends KoinPage<ProfileCubit> {
   const ProfileWidget({Key? key}) : super(key: key);
@@ -25,20 +24,17 @@ class ProfileWidget extends KoinPage<ProfileCubit> {
         body: BlocConsumer<ProfileCubit, ProfileState>(
           listener: (context, state) {
             if (state is ProfileLogoutSuccess) {
-              Navigator.of(context)
-                  .pushReplacementNamed(LoginScreenRoute.ROUTE_NAME);
+              Navigator.of(context).pushReplacementNamed(LoginScreenRoute.ROUTE_NAME);
             }
           },
-          buildWhen: (previous, current) =>
-              previous is ProfileInitial && current is ProfileLoaded,
+          buildWhen: (previous, current) => previous is ProfileInitial && current is ProfileLoaded,
           builder: (context, state) => state is ProfileLoaded
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(Dimens.circular)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.circular)),
                       color: SpotifyColors.black,
                       child: Container(
                         margin: const EdgeInsets.all(5),
@@ -47,14 +43,14 @@ class ProfileWidget extends KoinPage<ProfileCubit> {
                             Flexible(
                               flex: 1,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(Dimens.circular),
+                                borderRadius: BorderRadius.circular(Dimensions.circular),
                                 child: Image(
                                   image: NetworkImage(state.user.image),
                                 ),
                               ),
                             ),
                             const SizedBox(
-                              width: Dimens.spanMedium,
+                              width: Dimensions.spanMedium,
                             ),
                             Expanded(
                               flex: 2,
@@ -68,9 +64,7 @@ class ProfileWidget extends KoinPage<ProfileCubit> {
                       ),
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: SpotifyColors.red
-                      ),
+                      style: ElevatedButton.styleFrom(backgroundColor: SpotifyColors.red),
                       onPressed: () {
                         context.read<ProfileCubit>().logout();
                       },

@@ -1,17 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:spotify_statistic/data/models/user_object.dart';
 import 'package:spotify_statistic/data/spotify_repository.dart';
 import 'package:spotify_statistic/data/token_repository.dart';
 import 'package:spotify_statistic/features/globalUi/cubit/global_ui_cubit.dart';
 
-import '../../../data/models/user_object.dart';
-
 part 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  ProfileCubit(
-      this._spotifyRepository, this._globalUiCubit, this._tokenRepository)
-      : super(ProfileInitial());
+  ProfileCubit(this._spotifyRepository, this._globalUiCubit, this._tokenRepository) : super(ProfileInitial());
 
   final SpotifyRepository _spotifyRepository;
   final GlobalUiCubit _globalUiCubit;

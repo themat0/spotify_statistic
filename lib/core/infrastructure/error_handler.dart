@@ -2,16 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:logger/logger.dart';
 import 'package:spotify_statistic/core/helpers/rest_api_exception.dart';
 import 'package:spotify_statistic/data/token_repository.dart';
-
-import '../../generated/locale_keys.g.dart';
+import 'package:spotify_statistic/generated/locale_keys.g.dart';
 
 class ErrorHandler {
-
   ErrorHandler(this._tokenRepository);
 
   final TokenRepository _tokenRepository;
 
-  final logger = Logger(
+  static final logger = Logger(
     printer: PrettyPrinter(
       methodCount: 6,
       errorMethodCount: 8,

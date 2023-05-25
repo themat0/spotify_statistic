@@ -12,6 +12,7 @@ class GlobalUiCubit extends Cubit<GlobalUiState> {
   void showSnackBarError(dynamic message) {
     emit(GlobalUiSnackBarError(_errorHandler.getHandleError(message)));
   }
+
   void showLoading() {
     emit(GlobalUiLoading());
   }

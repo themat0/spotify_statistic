@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spotify_statistic/styles/colors.dart';
+import 'package:spotify_statistic/styles/images.dart';
 
 class SplashScreenForm extends StatelessWidget {
   const SplashScreenForm({super.key});
@@ -16,7 +17,7 @@ class SplashScreenForm extends StatelessWidget {
       ),
       child: Center(
         child: Image.asset(
-          'assets/images/logo-no-background.png',
+          SpotifyImages.logo,
           scale: 5,
         ),
       ),

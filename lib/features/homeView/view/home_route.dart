@@ -1,16 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:spotify_statistic/core/widgets/koin_page.dart';
 import 'package:spotify_statistic/features/artistsScreen/view/artists_widget.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:spotify_statistic/features/homeView/bloc/home_bloc.dart';
+import 'package:spotify_statistic/features/loginScreen/view/login_screen_route.dart';
+import 'package:spotify_statistic/features/profileScreen/view/profile_widget.dart';
 import 'package:spotify_statistic/features/tracksScreen/view/tracks_widget.dart';
+import 'package:spotify_statistic/generated/locale_keys.g.dart';
 import 'package:spotify_statistic/styles/colors.dart';
-
-import '../../../generated/locale_keys.g.dart';
-import '../../loginScreen/view/login_screen_route.dart';
-import '../../profileScreen/view/profile_widget.dart';
-import '../bloc/home_bloc.dart';
 
 class HomeRoute extends KoinPage<HomeBloc> {
   const HomeRoute({super.key});
@@ -22,8 +21,7 @@ class HomeRoute extends KoinPage<HomeBloc> {
     BlocProvider.of<HomeBloc>(context).add(HomeChangeMenuEvent(index));
   }
 
-  Widget _pageNavigation(HomeState state) =>
-      [
+  Widget _pageNavigation(HomeState state) => [
         const ArtistsWidget(),
         const TracksWidget(),
         const ProfileWidget(),
@@ -34,8 +32,7 @@ class HomeRoute extends KoinPage<HomeBloc> {
     return BlocConsumer<HomeBloc, HomeState>(
       listener: (context, state) {
         if (state is HomeForceLogoutState) {
-          Navigator.of(context).pushReplacementNamed(
-              LoginScreenRoute.ROUTE_NAME);
+          Navigator.of(context).pushReplacementNamed(LoginScreenRoute.ROUTE_NAME);
         }
       },
       builder: (context, state) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'colors.dart';
-import 'dimens.dart';
+import 'package:spotify_statistic/styles/colors.dart';
+import 'package:spotify_statistic/styles/dimensions.dart';
 
 ThemeData createTheme(BuildContext context) => ThemeData(
       scaffoldBackgroundColor: SpotifyColors.backgroundColor,
@@ -9,26 +8,27 @@ ThemeData createTheme(BuildContext context) => ThemeData(
       brightness: Brightness.dark,
       textTheme: _createTextTheme(context),
     );
+
 TextTheme _createTextTheme(BuildContext context) => Theme.of(context).textTheme.copyWith(
       displayLarge: const TextStyle(
-        fontSize: Dimens.fontSizeBig,
+        fontSize: Dimensions.fontSizeBig,
         color: SpotifyColors.white,
       ),
       displayMedium: const TextStyle(
-        fontSize: Dimens.fontSizeMedium,
+        fontSize: Dimensions.fontSizeMedium,
         color: SpotifyColors.white,
       ),
       displaySmall: const TextStyle(
-        fontSize: Dimens.fontSizeSmallPlus,
+        fontSize: Dimensions.fontSizeSmallPlus,
         color: SpotifyColors.white,
       ),
       titleLarge: const TextStyle(
-        fontSize: Dimens.fontSizeBig,
+        fontSize: Dimensions.fontSizeBig,
         color: SpotifyColors.white,
       ),
       labelLarge: const TextStyle(
-        fontSize: Dimens.fontSizeSmall,
+        fontSize: Dimensions.fontSizeSmall,
         fontWeight: FontWeight.w200,
         color: SpotifyColors.white,
       ),
-);
+    );

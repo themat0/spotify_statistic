@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_statistic/styles/colors.dart';
 
 class SnackBarUtils {
   void showErrorSnackBar(BuildContext context, String errorMessage) {
@@ -7,18 +8,7 @@ class SnackBarUtils {
         errorMessage,
         textAlign: TextAlign.center,
       ),
-      backgroundColor: Colors.red,
-      behavior: SnackBarBehavior.floating,
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
-
-  void showSuccessSnackBar(BuildContext context, String successMessage) {
-    final snackBar = SnackBar(
-      content: Text(
-        successMessage,
-        textAlign: TextAlign.center,
-      ),
+      backgroundColor: SpotifyColors.red,
       behavior: SnackBarBehavior.floating,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);

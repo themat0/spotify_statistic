@@ -8,7 +8,7 @@ class BlockUiProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: CircularProgressIndicator(color: SpotifyColors.primaryColor),
+      child: const CircularProgressIndicator(color: SpotifyColors.primaryColor),
     );
   }
 }

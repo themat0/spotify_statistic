@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify_statistic/core/widgets/koin_page.dart';
+import 'package:spotify_statistic/features/homeView/view/home_route.dart';
 import 'package:spotify_statistic/features/loginScreen/view/login_screen_route.dart';
 import 'package:spotify_statistic/features/splashScreen/cubit/splash_screen_cubit.dart';
 import 'package:spotify_statistic/features/splashScreen/view/splash_screen_form.dart';
-
-import '../../../core/widgets/koin_page.dart';
-import '../../homeView/view/home_route.dart';
 
 class SplashScreenRoute extends KoinPage<SplashScreenCubit> {
   const SplashScreenRoute({super.key});
@@ -29,8 +28,7 @@ class SplashScreenRoute extends KoinPage<SplashScreenCubit> {
   }
 
   @override
-  Widget buildPage(BuildContext context) =>
-      BlocListener<SplashScreenCubit, SplashScreenState>(
+  Widget buildPage(BuildContext context) => BlocListener<SplashScreenCubit, SplashScreenState>(
         listener: onLoginResult,
         child: const SplashScreenForm(),
       );

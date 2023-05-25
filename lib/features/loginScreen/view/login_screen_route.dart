@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify_statistic/core/widgets/koin_page.dart';
 import 'package:spotify_statistic/features/homeView/view/home_route.dart';
 import 'package:spotify_statistic/features/loginScreen/cubit/login_screen_cubit.dart';
-
-import '../../../core/widgets/koin_page.dart';
-import 'login_screen_form.dart';
+import 'package:spotify_statistic/features/loginScreen/view/login_screen_form.dart';
 
 class LoginScreenRoute extends KoinPage<LoginScreenCubit> {
   const LoginScreenRoute({super.key});
@@ -22,8 +21,7 @@ class LoginScreenRoute extends KoinPage<LoginScreenCubit> {
   }
 
   @override
-  Widget buildPage(BuildContext context) =>
-      BlocListener<LoginScreenCubit, LoginScreenState>(
+  Widget buildPage(BuildContext context) => BlocListener<LoginScreenCubit, LoginScreenState>(
         listener: onLoginResult,
         child: const LoginScreenForm(),
       );
